@@ -63,6 +63,8 @@ flutter:
     - icons/btc.png
     - icons/ccbiru.png
     - icons/cchijau.png
+    - icons/static.png
+    - icons/cash.png
      
 
   # An image asset can refer to one or more resolution-specific "variants", see

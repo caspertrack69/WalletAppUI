@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:project/util/my_button.dart';
 import 'package:project/util/my_card.dart';
+import 'package:project/util/my_list_data.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -121,12 +122,26 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 25.0,
+
+            //transaksi statik
+            Padding(
+              padding: const EdgeInsets.all(25.0),
+              child: Column(
+                children: [
+                  //icon
+                  MyListData(
+                    iconImagePath: 'icons/static.png',
+                    listTitle: 'Statiscics',
+                    listSubTitle: 'Transactions and Income',
+                  ),
+                  MyListData(
+                    iconImagePath: 'icons/cash.png',
+                    listTitle: 'Cashless',
+                    listSubTitle: 'Transactions',
+                  ),
+                ],
+              ),
             ),
-            Column(children: [
-              
-            ],),
           ],
         ),
       ),
