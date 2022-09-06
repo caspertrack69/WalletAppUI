@@ -1,6 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:project/util/my_button.dart';
+import 'package:project/util/my_card.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,6 +13,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  //page controller
+  final _controller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +51,82 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            SizedBox(
+              height: 25,
+            ),
+
+            //kartu
+            Container(
+              height: 200,
+              child: PageView(
+                scrollDirection: Axis.horizontal,
+                controller: _controller,
+                children: [
+                  MyCard(
+                    balance: 5.124,
+                    cardNumber: 12345678,
+                    expiryMonth: 13,
+                    expiryYear: 24,
+                    color: Colors.blue[300],
+                  ),
+                  MyCard(
+                    balance: 2.341,
+                    cardNumber: 12345678,
+                    expiryMonth: 10,
+                    expiryYear: 24,
+                    color: Colors.red[300],
+                  ),
+                  MyCard(
+                    balance: 4.467,
+                    cardNumber: 12345678,
+                    expiryMonth: 10,
+                    expiryYear: 14,
+                    color: Colors.green[300],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            SmoothPageIndicator(
+              controller: _controller,
+              count: 3,
+              effect: ExpandingDotsEffect(
+                  activeDotColor: Color.fromARGB(255, 150, 159, 161)),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  //button kirim
+                  MyButton(
+                    iconImagePath: 'icons/btc.png',
+                    buttonText: 'Bitcoin ',
+                  ),
+                  //button tambah
+                  MyButton(
+                    iconImagePath: 'icons/ccbiru.png',
+                    buttonText: 'Credit ',
+                  ),
+                  //button bayar
+                  MyButton(
+                    iconImagePath: 'icons/cchijau.png',
+                    buttonText: 'Card ',
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 25.0,
+            ),
+            Column(children: [
+              
+            ],),
           ],
         ),
       ),
