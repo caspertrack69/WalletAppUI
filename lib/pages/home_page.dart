@@ -26,7 +26,27 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.monetization_on_sharp),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.home,
+                  size: 35,
+                  color: Colors.lightBlueAccent,
+                )),
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.settings,
+                  size: 35,
+                  color: Colors.lightBlueAccent,
+                )),
+          ],
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -104,10 +124,10 @@ class _HomePageState extends State<HomePage> {
                   activeDotColor: Color.fromARGB(255, 150, 159, 161)),
             ),
             SizedBox(
-              height: 30,
+              height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -132,7 +152,7 @@ class _HomePageState extends State<HomePage> {
 
             //transaksi statik
             Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
                   //icon
