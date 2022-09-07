@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, duplicate_ignore
+
 import 'package:flutter/material.dart';
 import 'package:project/pages/home_page.dart';
 
@@ -10,6 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: prefer_const_constructors
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomePage(),
